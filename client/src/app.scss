@@ -1,0 +1,35 @@
+@import "./style/base.scss";
+
+page {
+  display: block;
+  font-size: 28px;
+  color: #323232;
+  background-color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+view,
+text,
+scroll-view,
+swiper,
+button,
+form,
+input,
+textarea,
+label,
+navigator,
+image {
+  box-sizing: border-box;
+  // border: 1px solid red;
+}
+
+.single-line {
+  overflow: hidden;
+  display: -webkit-box !important;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  word-wrap: break-all;
+  white-space: nowrap !important;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
