@@ -1,0 +1,21 @@
+.action-layout {
+  height: 100px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 36px;
+  background: #39acff;
+  border-radius: 12px;
+  line-height: 100px;
+
+  &.disabled {
+    opacity: 0.5;
+  }
+
+  > view {
+    font-size: 28px;
+  }
+}
+
+.action-layout-hover {
+  opacity: 0.8;
+}

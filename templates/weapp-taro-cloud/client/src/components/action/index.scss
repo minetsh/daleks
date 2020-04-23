@@ -1,0 +1,16 @@
+.action-layout {
+  font-size: 0;
+  position: relative;
+
+  &.disabled {
+    opacity: 0.5;
+  }
+
+  > view {
+    font-size: 28px;
+  }
+}
+
+.action-layout-hover {
+  opacity: 0.8;
+}
