@@ -1,16 +1,26 @@
 {
   "name": "daleks",
   "version": "0.0.1",
-  "private": true,
   "description": "daleks",
   "author": "Felix, minxtth@gmail.com",
   "license": "MIT",
   "repository": "git@github.com:minetsh/template.git",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "bin": {
-    "daleks": "src/index.js"
+    "daleks": "lib/index.js"
   },
   "scripts": {
+    "dev": "tsc --watch",
     "weapp": "git subtree push --prefix templates/weapp-taro-cloud origin weapp-taro-cloud"
+  },
+  "dependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/inquirer": "^6.5.0",
+    "@types/ora": "^3.2.0",
+    "commander": "^5.1.0",
+    "inquirer": "^7.1.0",
+    "ora": "^4.0.4",
+    "simple-git": "^1.132.0",
+    "typescript": "^3.8.3"
   }
 }
