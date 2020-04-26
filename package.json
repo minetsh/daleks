@@ -2,10 +2,10 @@
   "name": "daleks",
   "version": "0.0.1",
   "description": "daleks",
-  "author": "Felix, minxtth@gmail.com",
+  "author": "Felix <minxtth@gmail.com>",
   "license": "MIT",
   "repository": "git@github.com:minetsh/template.git",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
   "bin": {
     "daleks": "lib/index.js"
   },
