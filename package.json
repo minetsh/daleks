@@ -11,16 +11,23 @@
   },
   "scripts": {
     "dev": "tsc --watch",
+    "build": "webpack --config ./build/webpack.config.js",
     "weapp": "git subtree push --prefix templates/weapp-taro-cloud origin weapp-taro-cloud"
   },
   "dependencies": {
     "@types/commander": "^2.12.2",
     "@types/inquirer": "^6.5.0",
     "@types/ora": "^3.2.0",
+    "axios": "^0.19.2",
     "commander": "^5.1.0",
     "inquirer": "^7.1.0",
     "ora": "^4.0.4",
     "simple-git": "^1.132.0",
     "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "ts-loader": "^7.0.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   }
 }
