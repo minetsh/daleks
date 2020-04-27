@@ -1,3 +1,7 @@
 src/
 yarn.lock
 yarn-error.log
+template.json
+tsconfig.json
+build/
+templates/

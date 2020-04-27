@@ -1,6 +1,6 @@
 {
   "name": "daleks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "daleks",
   "author": "Felix <minxtth@gmail.com>",
   "license": "MIT",
@@ -15,9 +15,6 @@
     "weapp": "git subtree push --prefix templates/weapp-taro-cloud origin weapp-taro-cloud"
   },
   "dependencies": {
-    "@types/commander": "^2.12.2",
-    "@types/inquirer": "^6.5.0",
-    "@types/ora": "^3.2.0",
     "axios": "^0.19.2",
     "commander": "^5.1.0",
     "inquirer": "^7.1.0",
@@ -26,6 +23,9 @@
     "typescript": "^3.8.3"
   },
   "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/inquirer": "^6.5.0",
+    "@types/ora": "^3.2.0",
     "ts-loader": "^7.0.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
