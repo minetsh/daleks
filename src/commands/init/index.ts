@@ -5,10 +5,7 @@ import { Config } from '../../common/configs';
 import ora from 'ora';
 
 export default async function (name: string, branch?: string): Promise<void> {
-  // console.log('init', command, x, y);
-  // console.log(command.pepper)
-
-  const o = ora('创建项目').start();
+  const o = ora(`创建项目：${name}`).start();
   try {
     await clone(Config.repository, `${Config.root}/${name}`, branch);
     o.succeed();
