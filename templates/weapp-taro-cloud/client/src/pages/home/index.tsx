@@ -11,6 +11,6 @@ export default class extends Component<Props, State> {
   };
 
   render() {
-    return <View className="home">首页</View>;
+    return <View className="home"></View>;
   }
 }
