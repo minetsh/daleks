@@ -7,6 +7,8 @@ function onPageRouteError(e?: any) {
   Taro.reLaunch({ url: pages.home.name });
 }
 
+export type RouteOpenType = "navigate" | "redirect" | "tab" | "launch" | "back";
+
 const route = (u?: string, params?: any, func?: Function) => {
   const { u: url, page } = parse(u, params);
   const fun = func || Taro.navigateTo;
@@ -26,24 +28,39 @@ const route = (u?: string, params?: any, func?: Function) => {
   }
 };
 
-function navigate(url: string, params?: any) {
+function navigate(url?: string, params?: any) {
   route(url, params, Taro.navigateTo);
 }
 
-function web(url: string, params?: any) {
+function web(url?: string, params?: any) {
   // TODO
 }
 
-function redirect(url: string, params?: any) {
+function redirect(url?: string, params?: any) {
   route(url, params, Taro.redirectTo);
 }
 
-function tab(url: string, params?: any) {
+function tab(url?: string, params?: any) {
   route(url, params, Taro.switchTab);
 }
 
-function launch(url: string, params?: any) {
+function launch(url?: string, params?: any) {
   route(url, params, Taro.reLaunch);
+}
+
+export function to(openType: RouteOpenType, name?: string, params?: object) {
+  switch (openType) {
+    case "navigate":
+      return navigate(name, params);
+    case "redirect":
+      return redirect(name, params);
+    case "launch":
+      return launch(name, params);
+    case "tab":
+      return tab(name, params);
+    case "back":
+      return back();
+  }
 }
 
 function go(uri: Uri, params?: any) {

@@ -5,15 +5,15 @@ declare type Uri = {
 };
 
 declare namespace Taro {
-  function $web(url: string, params?: any): void;
+  function $web(url?: string, params?: any): void;
 
-  function $navigate(name: string, params?: any): void;
+  function $navigate(name?: string, params?: any): void;
 
-  function $redirect(name: string, params?: any): void;
+  function $redirect(name?: string, params?: any): void;
 
-  function $tab(name: string, params?: any): void;
+  function $tab(name?: string, params?: any): void;
 
-  function $launch(name: string, params?: any): void;
+  function $launch(name?: string, params?: any): void;
 
   function $go(uri: Uri, params?: any): void;
 
