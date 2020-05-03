@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import ora from 'ora';
 
-interface Template {
+interface TemplateConfig {
   templates: [
     {
       name: string;
@@ -21,7 +21,7 @@ export default async function (): Promise<void> {
       o.succeed();
       const { content } = data;
       const buf = Buffer.from(content, 'base64');
-      const template: Template = JSON.parse(buf.toString());
+      const template: TemplateConfig = JSON.parse(buf.toString());
       (template.templates || []).forEach((t, index: number) => {
         console.log(`${index + 1}. ${t.name}`);
       });
