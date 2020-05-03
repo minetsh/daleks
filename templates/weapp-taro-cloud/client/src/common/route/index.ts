@@ -1,7 +1,5 @@
 import Taro from "@tarojs/taro";
-import qs from "qs";
-import pages, { pageMap } from "@/common/route/pages";
-import Page from "@/common/route/page";
+import pages, { parse } from "@/common/route/pages";
 import { check } from "@/common/auth";
 
 function onPageRouteError(e?: any) {
@@ -9,27 +7,7 @@ function onPageRouteError(e?: any) {
   Taro.reLaunch({ url: pages.home.name });
 }
 
-const parse = (u: string, params?: any): { u: string; page?: Page } => {
-  if (!u) {
-    console.error("页面路径错误");
-    return {
-      u: pages.home.name,
-      page: pages.home
-    };
-  }
-  const [path, search] = u.split("?");
-  const s = qs.stringify({
-    ...qs.parse(search),
-    ...params
-  });
-  const page = pageMap[path];
-  return {
-    page,
-    u: `${(page && page.path) || path}?${s}`
-  };
-};
-
-const route = (u: string, params?: any, func?: Function) => {
+const route = (u?: string, params?: any, func?: Function) => {
   const { u: url, page } = parse(u, params);
   const fun = func || Taro.navigateTo;
   if (page) {
@@ -38,6 +16,8 @@ const route = (u: string, params?: any, func?: Function) => {
     }).then(ok => {
       if (ok) {
         fun({ url }).catch(onPageRouteError);
+      } else {
+        // 授权检查未通过
       }
     });
   } else {
@@ -50,7 +30,9 @@ function navigate(url: string, params?: any) {
   route(url, params, Taro.navigateTo);
 }
 
-function web(url: string, params?: any) {}
+function web(url: string, params?: any) {
+  // TODO
+}
 
 function redirect(url: string, params?: any) {
   route(url, params, Taro.redirectTo);

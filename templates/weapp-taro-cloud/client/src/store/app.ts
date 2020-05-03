@@ -10,6 +10,8 @@ export interface App {
   user?: User;
   readonly userId?: string;
   readonly isAuthed: boolean;
+
+  onAuthed(user: User): void;
 }
 
 const app: App = observable({
@@ -23,6 +25,10 @@ const app: App = observable({
 
   get isAuthed(): boolean {
     return !!this.userId;
+  },
+
+  onAuthed(user: User): void {
+    this.user = user;
   }
 } as App);
 

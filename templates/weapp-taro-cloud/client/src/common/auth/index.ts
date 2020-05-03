@@ -21,10 +21,11 @@ export const check = async (request?: AuthRequest) => {
     if (req.type === AuthType.auth) {
       return app.isAuthed;
     }
+    return true;
   } catch (e) {
     console.error(e);
+    return false;
   }
-  return false;
 };
 
 export default AuthType;
