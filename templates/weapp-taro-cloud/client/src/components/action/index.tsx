@@ -1,7 +1,8 @@
 import Taro, { PropsWithChildren } from "@tarojs/taro";
+import { ITouchEvent } from "@tarojs/components/types/common";
 import { View } from "@tarojs/components";
 import classnames from "classnames";
-import { CommonEvent } from "@tarojs/components/types/common";
+import { to } from "@/common/route";
 import "./index.scss";
 
 type Props = {
@@ -12,24 +13,38 @@ type Props = {
   openType?: "navigate" | "redirect" | "tab" | "launch" | "back";
   params?: object;
   disabled?: boolean;
-  onClick?: Function;
-  onClicked?: Function;
+  onClick?: (event: ITouchEvent) => any;
+  onClicked?: (event: ITouchEvent) => any;
 };
 
 export default function Action(props: PropsWithChildren<Props>) {
-  const { url, target, appId, disabled, onClick }: Props = props;
-  const onAction = (e: CommonEvent) => {
+  const {
+    url,
+    target,
+    appId,
+    disabled,
+    openType = "navigate",
+    params,
+    onClick,
+    onClicked
+  }: Props = props;
+
+  const onAction = (e: ITouchEvent) => {
     if (onClick) {
       e.stopPropagation();
       onClick(e);
+      onClicked && onClicked(e);
       return;
     }
-    if (target === "mini" && appId) {
+    if (target === "self") {
+      to(openType, url, params);
+    } else if (target === "web") {
+      Taro.$web(url, params);
+    } else if (target === "mini" && appId) {
       Taro.navigateToMiniProgram({
         appId,
         path: url
       });
-      return;
     }
   };
 
