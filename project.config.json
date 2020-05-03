@@ -3,7 +3,7 @@
 	"cloudfunctionRoot": "cloud/functions/",
 	"projectname": "weapp-taro-cloud",
 	"description": "Template for weapp with taro.",
-	"appid": "wx5d4ad2584211e931",
+	"appid": "wxa14a3b7c47020d71",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
