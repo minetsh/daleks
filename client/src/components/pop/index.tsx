@@ -36,18 +36,15 @@ export default function Pop(props: Props) {
   };
 
   return (
-    visibility === "showing" ||
-    (visibility === "visible" && (
-      <View
-        className="pop"
-        style={{
-          marginLeft: `${props.x || 0}px`,
-          marginTop: `${props.y || 0}px`
-        }}
-        onAnimationEnd={onAnimationEnd}
-      >
-        {props.children}
-      </View>
-    ))
+    <View
+      className="pop"
+      style={{
+        marginLeft: `${props.x || 0}px`,
+        marginTop: `${props.y || 0}px`
+      }}
+      onAnimationEnd={onAnimationEnd}
+    >
+      {(visibility === "showing" || visibility === "visible") && props.children}
+    </View>
   );
 }
