@@ -9,12 +9,19 @@ const DEFAULT_RECT = {
   width: 87
 };
 
-let cr: Taro.getMenuButtonBoundingClientRect.Rect;
+let cr: Taro.getMenuButtonBoundingClientRect.Rect | null = null;
 export const getMenuBoundingRect = () => {
   if (!cr) {
     try {
       cr = Taro.getMenuButtonBoundingClientRect();
-      return cr || DEFAULT_RECT;
+      if (cr) {
+        if (cr.width === 0 || cr.height === 0) {
+          cr = null;
+          return DEFAULT_RECT;
+        }
+        return cr;
+      }
+      return DEFAULT_RECT;
     } catch (e) {
       console.error(e);
       return DEFAULT_RECT;
