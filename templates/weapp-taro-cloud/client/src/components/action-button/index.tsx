@@ -1,8 +1,9 @@
 import Taro, { PropsWithChildren } from "@tarojs/taro";
 import { ButtonProps } from "@tarojs/components/types/Button";
-import { CommonEvent, BaseEventOrig } from "@tarojs/components/types/common";
+import { BaseEventOrig } from "@tarojs/components/types/common";
 import { Button } from "@tarojs/components";
 import classnames from "classnames";
+import { fetch } from "@/core/fetch";
 import "./index.scss";
 
 type Props = ButtonProps & {
@@ -16,6 +17,12 @@ export default function ActionButton(props: PropsWithChildren<Props>) {
 
   const onUserInfoEvent = (e: BaseEventOrig<UserInfoDetail>) => {
     onUserInfo && onUserInfo(e.detail);
+    if (e.detail) {
+      const userinfo = e.detail;
+      if (userinfo.userInfo) {
+        fetch("auth-user", { userinfo });
+      }
+    }
   };
 
   return (
