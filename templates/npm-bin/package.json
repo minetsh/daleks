@@ -1,0 +1,24 @@
+{
+  "name": "npm-bin",
+  "version": "1.0.0",
+  "description": "Template project for npm bin.",
+  "main": "index.ts",
+  "author": "Felix,minxtth@gmail.com",
+  "license": "MIT",
+  "bin": {
+    "npm-bin": "lib/index.js"
+  },
+  "scripts": {
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/inquirer": "^6.5.0",
+    "@types/ora": "^3.2.0",
+    "commander": "^5.1.0",
+    "inquirer": "^7.1.0",
+    "ora": "^4.0.4",
+    "simple-git": "^2.4.0",
+    "typescript": "^3.8.3"
+  }
+}

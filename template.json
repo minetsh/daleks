@@ -3,6 +3,10 @@
     {
       "name": "weapp-taro-cloud",
       "branch": "weapp-taro-cloud"
+    },
+    {
+      "name": "npm-bin",
+      "branch": "npm-bin"
     }
   ]
 }
