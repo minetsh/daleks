@@ -12,7 +12,8 @@
   "scripts": {
     "dev": "tsc --watch",
     "build": "webpack --config ./build/webpack.config.js",
-    "weapp": "git subtree push --prefix templates/weapp-taro-cloud origin weapp-taro-cloud"
+    "weapp": "git subtree push --prefix templates/weapp-taro-cloud origin weapp-taro-cloud",
+    "npm-bin": "git subtree push --prefix templates/npm-bin origin npm-bin"
   },
   "dependencies": {
     "axios": "^0.19.2",

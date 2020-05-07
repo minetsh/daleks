@@ -3,7 +3,7 @@ import init from './init';
 import list from './list';
 
 program
-  .command('init <name> [branch]')
+  .command('init [name] [branch]')
   .description('初始化一个项目')
   .action(init);
 
