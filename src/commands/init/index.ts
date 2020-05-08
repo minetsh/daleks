@@ -1,8 +1,4 @@
-import commander from 'commander';
-import Axios from 'axios';
 import ora from 'ora';
-import inquirer from 'inquirer';
-import * as fs from 'fs';
 import { clone } from '../../common/git/clone';
 import { Config } from '../../common/configs';
 import { ask_init_questions } from './questions';
