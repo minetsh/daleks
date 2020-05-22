@@ -4,7 +4,7 @@
   "description": "daleks",
   "author": "Felix <minxtth@gmail.com>",
   "license": "MIT",
-  "repository": "git@github.com:minetsh/template.git",
+  "repository": "git@github.com:minetsh/daleks.git",
   "main": "lib/index.js",
   "bin": {
     "daleks": "lib/index.js"
