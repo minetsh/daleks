@@ -19,10 +19,6 @@ declare namespace Taro {
 
   function $back(delta?: number, delay?: number): void;
 
-  // function $getStorage <T = any> (key: string, defaultValue?: T): Promise<T>
-
-  // function $setStorage <T = any> (key: string, value: T): Promise<T>
-
   function $report(obj: any, tag?: string): void;
 
   function $toast(
