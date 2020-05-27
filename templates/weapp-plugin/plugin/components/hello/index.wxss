@@ -1,0 +1,4 @@
+.hello {
+  color: hotpink;
+  font-size: 24rpx;
+}
