@@ -1,0 +1,15 @@
+{
+  "pages": ["pages/index/index"],
+  "window": {
+    "navigationBarTitleText": "插件模板项目",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "plugins": {
+    "hello": {
+      "version": "dev",
+      "provider": "wxc8605488e57bc088"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

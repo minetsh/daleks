@@ -1,0 +1,9 @@
+{
+  "publicComponents": {
+    "hello": "components/hello/index"
+  },
+  "pages": {
+    "hello-page": "pages/hello/index"
+  },
+  "main": "index.js"
+}

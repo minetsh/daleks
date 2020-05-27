@@ -1,0 +1,4 @@
+<navigator id="nav" url="plugin://hello/hello-page">插件页面</navigator>
+<view class="hello">
+  <hello name="Felix"></hello>
+</view>
