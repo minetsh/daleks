@@ -3,18 +3,20 @@ import { ITouchEvent } from "@tarojs/components/types/common";
 import { View } from "@tarojs/components";
 import classnames from "classnames";
 import { to } from "@/common/route";
+import { buildURI } from "@/core/utils/uri";
 import "./index.scss";
 
 type Props = {
   url?: string;
   appId?: string;
   target?: "self" | "web" | "mini";
-  urlType?: number;
   openType?: "navigate" | "redirect" | "tab" | "launch" | "back";
   params?: object;
   disabled?: boolean;
   onClick?: (event: ITouchEvent) => any;
+  onAction?: (event: ITouchEvent) => any;
   onClicked?: (event: ITouchEvent) => any;
+  onActioned?: (event: ITouchEvent) => any;
 };
 
 export default function Action(props: PropsWithChildren<Props>) {
@@ -26,14 +28,16 @@ export default function Action(props: PropsWithChildren<Props>) {
     openType = "navigate",
     params,
     onClick,
-    onClicked
+    onAction,
+    onClicked,
+    onActioned
   }: Props = props;
 
-  const onAction = (e: ITouchEvent) => {
-    if (onClick) {
+  const handleAction = (e: ITouchEvent) => {
+    if (onAction || onClick) {
       e.stopPropagation();
-      onClick(e);
-      onClicked && onClicked(e);
+      (onAction && onAction(e)) || (onClick && onClick(e));
+      (onActioned && onActioned(e)) || (onClicked && onClicked(e));
       return;
     }
     if (target === "self") {
@@ -43,20 +47,23 @@ export default function Action(props: PropsWithChildren<Props>) {
     } else if (target === "mini" && appId) {
       Taro.navigateToMiniProgram({
         appId,
-        path: url
+        path: buildURI(url, params)
       });
     }
+    (onActioned && onActioned(e)) || (onClicked && onClicked(e));
   };
 
   return (
     <View
-      className={classnames("action-layout", {
+      className={classnames("action", "class-name", {
         ["disabled"]: disabled
       })}
-      hoverClass="action-layout-hover"
-      onClick={onAction}
+      hoverClass="action-hover"
+      onClick={handleAction}
     >
       {props.children}
     </View>
   );
 }
+
+Action.externalClasses = ["class-name"];

@@ -1,4 +1,4 @@
-.action-layout {
+.action {
   font-size: 0;
   position: relative;
 
@@ -6,11 +6,7 @@
     opacity: 0.5;
   }
 
-  > view {
-    font-size: 28px;
+  &-hover {
+    opacity: 0.8;
   }
-}
-
-.action-layout-hover {
-  opacity: 0.8;
 }
