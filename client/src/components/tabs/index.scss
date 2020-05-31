@@ -1,0 +1,38 @@
+.tabs {
+  display: flex;
+  height: 80px;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+
+  .tab {
+    font-size: 26px;
+    min-width: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .tab-hover {
+    opacity: 0.8;
+  }
+
+  .more {
+    right: 0;
+    min-width: 100px;
+    position: sticky;
+    font-size: 26px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: stretch;
+    justify-content: center;
+    background-color: white;
+    box-shadow: -1px 0 50px rgba(0, 0, 0, 0.1);
+  }
+}

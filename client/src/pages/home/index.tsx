@@ -2,6 +2,7 @@ import Taro, { Component, Config } from "@tarojs/taro";
 import { View } from "@tarojs/components";
 import ActionButton from "@/components/action-button";
 import "./index.scss";
+import Tabs from "@/components/tabs";
 
 type Props = {};
 type State = {
@@ -20,6 +21,7 @@ export default class extends Component<Props, State> {
   render() {
     return (
       <View className="home">
+        <Tabs class-name="tabs" />
         <ActionButton openType="getUserInfo">
           <View className="userinfo">用户授权</View>
         </ActionButton>
