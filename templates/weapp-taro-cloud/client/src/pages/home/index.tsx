@@ -21,7 +21,20 @@ export default class extends Component<Props, State> {
   render() {
     return (
       <View className="home">
-        <Tabs class-name="tabs" />
+        <Tabs
+          class-name="tabs"
+          tabs={Array(10)
+            .fill(1)
+            .map(() => {
+              return {
+                name: "哈哈",
+                value: Math.random()
+              };
+            })}
+          onTab={tab => {
+            console.log(tab);
+          }}
+        />
         <ActionButton openType="getUserInfo">
           <View className="userinfo">用户授权</View>
         </ActionButton>
