@@ -1,29 +1,40 @@
-import Taro from "@tarojs/taro";
+import Taro, { useState } from "@tarojs/taro";
 import { View } from "@tarojs/components";
+import classnames from "classnames";
 import "./index.scss";
 
-export default function Tabs() {
+type Tab = { name: string; value: any };
+type Props = {
+  tabs?: Tab[];
+  onTab?: (tab: Tab) => void;
+};
+
+export default function Tabs(props: Props) {
+  const [value, setValue] = useState<string>();
+  const handleTab = (e: any) => {
+    const {
+      target: {
+        dataset: { tab }
+      }
+    } = e;
+    setValue(tab.value);
+    props.onTab && props.onTab(tab);
+  };
+
   return (
     <View className="tabs class-name">
-      {[
-        "a",
-        "b",
-        "c",
-        "d",
-        "e",
-        "f",
-        "g",
-        "h",
-        "i",
-        "j",
-        "k",
-        "l",
-        "m",
-        "n"
-      ].map(name => {
+      {(props.tabs || []).map((tab, index) => {
         return (
-          <View key={name} className="tab" hoverClass="tab-hover">
-            {name}
+          <View
+            key={index}
+            className={classnames("tab", {
+              active: value === tab.value
+            })}
+            hoverClass="tab-hover"
+            data-tab={tab}
+            onClick={handleTab}
+          >
+            {tab.name}
           </View>
         );
       })}

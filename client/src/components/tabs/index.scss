@@ -16,6 +16,10 @@
     align-items: center;
     align-self: stretch;
     justify-content: center;
+
+    &.active {
+      color: red;
+    }
   }
 
   .tab-hover {
