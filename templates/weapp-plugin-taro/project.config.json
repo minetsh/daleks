@@ -1,17 +1,20 @@
 {
-	"miniprogramRoot": "client/dist/",
-	"cloudfunctionRoot": "cloud/functions/",
-	"projectname": "weapp-taro-cloud",
-	"description": "Template for weapp with taro.",
-	"appid": "wxa14a3b7c47020d71",
+	"miniprogramRoot": "miniprogram/",
+	"pluginRoot": "plugin/",
+	"compileType": "plugin",
+	"appid": "wx1db9e5ab1149ea03",
+	"projectname": "weapp-plugin-taro",
+	"description": "template for plugin.",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
+		"enhance": true,
 		"postcss": false,
 		"preloadBackgroundData": false,
 		"minified": false,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": false,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
@@ -23,10 +26,9 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
-	"compileType": "miniprogram",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {}

@@ -1,0 +1,6 @@
+{
+  "pages": {
+    "album": "pages/album/index"
+  },
+  "main": "index.js"
+}
