@@ -1,6 +1,6 @@
 {
   "name": "daleks",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "daleks",
   "author": "Felix <minxtth@gmail.com>",
   "license": "MIT",
@@ -13,7 +13,8 @@
     "dev": "tsc --watch",
     "build": "webpack --config ./build/webpack.config.js",
     "weapp": "git subtree push --prefix templates/weapp-taro-cloud origin weapp-taro-cloud",
-    "npm-bin": "git subtree push --prefix templates/npm-bin origin npm-bin"
+    "npm-bin": "git subtree push --prefix templates/npm-bin origin npm-bin",
+    "daleks": "node lib/index.js"
   },
   "dependencies": {
     "axios": "^0.19.2",

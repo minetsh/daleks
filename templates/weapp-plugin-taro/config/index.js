@@ -1,3 +1,5 @@
+const path = require("path");
+
 const config = {
   projectName: "weapp-plugin-taro",
   date: "2020-6-1",
@@ -9,6 +11,9 @@ const config = {
   },
   sourceRoot: "src",
   outputRoot: "miniprogram",
+  alias: {
+    "@": path.resolve(__dirname, "..", "src")
+  },
   babel: {
     sourceMap: true,
     presets: [

@@ -4,7 +4,7 @@ import list, { templates, TemplateConfig } from '../list';
 import ora from 'ora';
 
 export const ask_init_questions = async (name?: string) => {
-  const answers = {};
+  const answers = { name };
   if (!name) {
     const answer = await ask_name();
     Object.assign(answers, answer);

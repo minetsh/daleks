@@ -9,7 +9,7 @@
     "css": "sass"
   },
   "scripts": {
-    "dev": "npx taro build --type weapp --plugin weapp -- --watch",
+    "dev": "npx taro build --type weapp --plugin weapp --watch",
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
     "build:alipay": "taro build --type alipay",
@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@tarojs/cli": "^2.2.6",
-    "@tarojs/mini-runner": "2.2.6",
+    "@tarojs/mini-runner": "^2.2.6",
     "@tarojs/webpack-runner": "2.2.6",
     "@types/react": "^16.4.6",
     "@types/webpack-env": "^1.13.6",

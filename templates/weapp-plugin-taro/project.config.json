@@ -1,6 +1,6 @@
 {
 	"miniprogramRoot": "miniprogram/",
-	"pluginRoot": "plugin/",
+	"pluginRoot": "dist/plugin/",
 	"compileType": "plugin",
 	"appid": "wx1db9e5ab1149ea03",
 	"projectname": "weapp-plugin-taro",
