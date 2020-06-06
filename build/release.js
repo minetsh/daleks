@@ -23,22 +23,32 @@ const exec = async (command, options) => {
 const release = async () => {
   const dir = path.join(__dirname, '../templates');
   const files = fs.readdirSync(dir);
-  files
-    .filter((filename) => {
-      const stat = fs.statSync(path.join(dir, filename));
-      return stat.isDirectory();
-    })
-    .map((filename) => ({
-      filename,
-      dalek: path.join(dir, filename, 'dalek.json'),
-      path: path.join(dir, filename),
-    }))
-    .filter((obj) => fs.existsSync(obj.dalek))
-    .forEach(async ({ dalek, filename }) => {
-      await exec(
-        `git subtree push --prefix templates/${filename} origin ${filename}`,
-      );
-    });
+  return Promise.all(
+    files
+      .filter((filename) => {
+        const stat = fs.statSync(path.join(dir, filename));
+        return stat.isDirectory();
+      })
+      .map((filename) => ({
+        filename,
+        config: path.join(dir, filename, 'dalek.json'),
+        path: path.join(dir, filename),
+      }))
+      .filter((obj) => fs.existsSync(obj.config))
+      .map(releaseDalek),
+  );
 };
 
-release();
+const releaseDalek = async ({ config, filename, path }) => {
+  const content = fs.readFileSync(config);
+  if (!content) return;
+  const dalek = JSON.parse(content);
+  await exec(
+    `git subtree push --prefix templates/${filename} origin ${dalek.branch}`,
+  );
+  return dalek;
+};
+
+release().then((daleks) => {
+  console.log(daleks);
+});
