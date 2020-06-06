@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import inquirer, { prompt, Question } from 'inquirer';
-import list, { templates, TemplateConfig } from '../list';
+import list, { templates, DaleksConfig } from '../list';
 import ora from 'ora';
 
 export const ask_init_questions = async (name?: string) => {
@@ -43,7 +43,7 @@ export const ask_name = async (exists: boolean = false) => {
   ]);
 };
 
-export const ask_template = async (config: TemplateConfig) => {
+export const ask_template = async (config: DaleksConfig) => {
   const { templates = [] } = config;
   return await prompt([
     {

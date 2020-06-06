@@ -1,0 +1,30 @@
+{
+  "templates": [
+    {
+      "name": "npm-bin",
+      "branch": "npm-bin"
+    },
+    {
+      "name": "weapp-plugin",
+      "branch": "weapp-plugin"
+    },
+    {
+      "name": "weapp-plugin-taro",
+      "branch": "weapp-plugin-taro"
+    },
+    {
+      "name": "weapp-taro-cloud",
+      "branch": "weapp-taro-cloud"
+    },
+    {
+      "name": "web-react",
+      "branch": "web-react",
+      "title": "React 模板",
+      "description": "React 基础模板"
+    },
+    {
+      "name": "web-react-blog",
+      "branch": "web-react-blog"
+    }
+  ]
+}

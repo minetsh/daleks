@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const git = require('simple-git/promise');
 const { exec: run } = require('child_process');
 
 const exec = async (command, options) => {
@@ -43,13 +44,25 @@ const releaseDalek = async ({ config, filename, path }) => {
   const content = fs.readFileSync(config);
   if (!content) return;
   const dalek = JSON.parse(content);
-  await exec(
-    `git subtree push --prefix templates/${filename} origin ${dalek.branch}`,
-  );
+
+  await git().raw([
+    'subtree',
+    'push',
+    '--prefix',
+    `templates/${filename}`,
+    'origin',
+    `${dalek.branch}`,
+  ]);
   console.log(`release ${dalek.name}`);
   return dalek;
 };
 
 release().then((daleks) => {
-  console.log(daleks);
+  const config = {
+    templates: daleks,
+  };
+  fs.writeFileSync(
+    path.join(__dirname, '../daleks.json'),
+    JSON.stringify(config, null, 2),
+  );
 });
