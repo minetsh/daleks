@@ -6,8 +6,8 @@ export const reset = async (targetPath: string) => {
   const path = `${targetPath}/.git`;
   if (fs.existsSync(path)) {
     await exec(`rm -rf ${path}`);
-    await git().init();
-    await git().add('.');
-    await git().commit('Init project.');
+    await git(targetPath).init();
+    await git(targetPath).add('.');
+    await git(targetPath).commit('Init project.');
   }
 };
