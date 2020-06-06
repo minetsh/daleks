@@ -46,6 +46,7 @@ const releaseDalek = async ({ config, filename, path }) => {
   await exec(
     `git subtree push --prefix templates/${filename} origin ${dalek.branch}`,
   );
+  console.log(`release ${dalek.name}`);
   return dalek;
 };
 
