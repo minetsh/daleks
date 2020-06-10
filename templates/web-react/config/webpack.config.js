@@ -3,8 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  watch: true,
-  mode: 'development',
   entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
@@ -12,10 +10,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
-  },
-  devtool: 'source-map',
-  devServer: {
-    contentBase: '../dist',
   },
   module: {
     rules: [
@@ -42,7 +36,7 @@ module.exports = {
       template: 'public/index.html',
     }),
     new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development',
+      NODE_ENV: 'production',
     }),
   ],
 };
