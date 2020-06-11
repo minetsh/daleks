@@ -5,6 +5,10 @@
       "branch": "npm-bin"
     },
     {
+      "name": "weapp-javascript",
+      "branch": "weapp-javascript"
+    },
+    {
       "name": "weapp-plugin",
       "branch": "weapp-plugin"
     },
@@ -15,6 +19,10 @@
     {
       "name": "weapp-taro-cloud",
       "branch": "weapp-taro-cloud"
+    },
+    {
+      "name": "weapp-typescript",
+      "branch": "weapp-typescript"
     },
     {
       "name": "web-react",
