@@ -21,6 +21,12 @@
       "branch": "weapp-taro-cloud"
     },
     {
+      "name": "weapp-taro-next",
+      "branch": "weapp-taro-next",
+      "title": "Taro next 模板",
+      "description": "Taro next 基础模板"
+    },
+    {
       "name": "weapp-typescript",
       "branch": "weapp-typescript"
     },
