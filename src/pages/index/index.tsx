@@ -17,6 +17,10 @@ export default class extends Component {
   componentDidMount() {}
 
   render() {
-    return <View className="index">asdas</View>;
+    return (
+      <View className="index">
+        <chart></chart>
+      </View>
+    );
   }
 }

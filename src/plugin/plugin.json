@@ -2,5 +2,8 @@
   "pages": {
     "album": "pages/index/index"
   },
-  "main": "index.js"
+  "publicComponents": {
+    "chart": "components/chart/index"
+  },
+  "main": "index.ts"
 }

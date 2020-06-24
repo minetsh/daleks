@@ -10,10 +10,11 @@ const config = {
     "828": 1.81 / 2
   },
   sourceRoot: "src",
-  outputRoot: "miniprogram",
+  outputRoot: "dist",
   alias: {
     "@": path.resolve(__dirname, "..", "src")
   },
+  plugins: ["@tarojs/plugin-sass"],
   babel: {
     sourceMap: true,
     presets: [
@@ -27,7 +28,16 @@ const config = {
     plugins: [
       "transform-decorators-legacy",
       "transform-class-properties",
-      "transform-object-rest-spread"
+      "transform-object-rest-spread",
+      [
+        "transform-runtime",
+        {
+          helpers: false,
+          polyfill: false,
+          regenerator: true,
+          moduleName: "babel-runtime"
+        }
+      ]
     ]
   },
   defineConstants: {},
