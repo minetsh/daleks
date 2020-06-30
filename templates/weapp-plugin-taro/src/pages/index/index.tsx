@@ -1,5 +1,5 @@
 import Taro, { Component, Config } from "@tarojs/taro";
-import { View } from "@tarojs/components";
+import { View, Navigator } from "@tarojs/components";
 import "./index.scss";
 
 export default class extends Component {
@@ -19,7 +19,8 @@ export default class extends Component {
   render() {
     return (
       <View className="index">
-        <chart></chart>
+        <chart content={"内容"}></chart>
+        <Navigator url="plugin://album/album">插件页面</Navigator>
       </View>
     );
   }
