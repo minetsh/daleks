@@ -3,6 +3,6 @@ import { View } from "@tarojs/components";
 
 export default class extends Component {
   render() {
-    return <View>aassxxx</View>;
+    return <View>插件自定义页面</View>;
   }
 }

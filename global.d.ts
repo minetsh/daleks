@@ -12,5 +12,9 @@ declare module "*.styl";
 declare namespace JSX {
   interface IntrinsicElements {
     Chart: React.DetailedHTMLProps<any, HTMLElement>;
+
+    chart: {
+      content?: string;
+    };
   }
 }
