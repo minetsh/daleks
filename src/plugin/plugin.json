@@ -1,9 +1,11 @@
 {
+  "publicComponents": {
+    "chart": "components/chart/index",
+    "hello": "components/hello/index"
+  },
   "pages": {
     "album": "pages/index/index"
   },
-  "publicComponents": {
-    "chart": "components/chart/index"
-  },
+
   "main": "index.ts"
 }

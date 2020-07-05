@@ -4,13 +4,18 @@ import { View } from "@tarojs/components";
 import "./index.scss";
 
 type Props = {
-  content?: string;
+  xx?: string;
 };
 
 type State = {};
 
 export default class Chart extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+    console.log(props.xx);
+  }
   render() {
-    return <View className="chart">插件组件：{this.props.content}</View>;
+    const { xx } = this.props;
+    return <View className="chart">插件组件：{xx}</View>;
   }
 }
